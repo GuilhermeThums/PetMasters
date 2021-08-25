@@ -10,7 +10,9 @@ namespace PetMasters
         static void Main(string[] args)
         {
             //GravarAnimais();
-            RecuperarAnimais();
+            //RecuperarAnimais();
+
+            RemovaTodosAnimais();
             Console.ReadLine();
         }
 
@@ -40,10 +42,34 @@ namespace PetMasters
             {
                 List<Animal> animais = contexto.Animal.ToList();
 
+                Console.WriteLine($"Foram encontrados {animais.Count} animais salvos.");
+
                 foreach (Animal animal in animais)
                 {
                     Console.WriteLine(animal.ToString());
                 }
+            }
+        }
+
+        private static void RemovaAnimal(int numeroRegistro)
+        {
+            using (var contexto = new PetShopContext())
+            {
+                var animais = contexto.Animal.ToList();
+                contexto.Animal.Remove(new Animal { NumeroRegistro = numeroRegistro });
+                
+                contexto.SaveChanges();
+            }
+        }
+
+        private static void RemovaTodosAnimais()
+        {
+            using (var contexto = new PetShopContext())
+            {
+                var animais = contexto.Animal.ToList();
+                contexto.Animal.RemoveRange(animais);
+
+                contexto.SaveChanges();
             }
         }
 
