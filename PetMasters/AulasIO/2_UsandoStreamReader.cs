@@ -29,14 +29,15 @@ namespace PetMasters
         {
             string[] campos = linha.Split(';');
 
-            var nome = campos[0];
-            var especie = campos[1];
-            var raca = campos[2];
-            var cor = campos[3];
-            var dataNascimentoString = campos[4];
+            var id = int.Parse(campos[0]);
+            var nome = campos[1];
+            var especie = campos[2];
+            var raca = campos[3];
+            var cor = campos[4];
+            var dataNascimentoString = campos[5];
             var dataNascimento = DateTime.Parse(dataNascimentoString, new CultureInfo("pt-BR"));
 
-            return new Animal(nome, especie, raca, cor, dataNascimento);
+            return new Animal(id, nome, especie, raca, cor, dataNascimento);
         }
     }
 }

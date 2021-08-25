@@ -1,6 +1,5 @@
-﻿using System;
-using System.IO;
-using System.Text;
+﻿using PetMasters.Entidades;
+using System;
 
 namespace PetMasters
 {
@@ -8,8 +7,21 @@ namespace PetMasters
     {
         static void Main(string[] args)
         {
+            GravarUsandoEntity();
             Console.ReadLine();
         }
 
+
+        private static void GravarUsandoEntity()
+        {
+            var animal = new Animal("Totó", "Cachorro", "Poodle", "Preto", DateTime.Now);
+
+            using (var contexto = new PetShopContext())
+            {
+                contexto.Animal.Add(animal);
+                contexto.SaveChanges();
+            }
+
+        }
     }
 }

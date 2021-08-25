@@ -1,7 +1,10 @@
-﻿namespace PetMasters.Entidades
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace PetMasters.Entidades
 {
     public class Endereco
     {
+        [Key]
         public string CEP { get; set; }
 
         public string Logradouro { get; set; }

@@ -1,5 +1,6 @@
 ﻿using PetMasters.Enumeradores;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace PetMasters.Entidades
 {
@@ -9,7 +10,8 @@ namespace PetMasters.Entidades
 
         public string Telefone { get; set; }
 
-        public string CPFCNPJ { get; set; }
+        [Key]
+        public string CPF { get; set; }
 
         public string Identidade { get; set; }
 
