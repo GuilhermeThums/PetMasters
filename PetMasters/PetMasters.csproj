@@ -45,8 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="1_LidandoDiretamenteFileStream.cs" />
-    <Compile Include="2_UsandoStreamReader.cs" />
+    <Compile Include="AulasIO\1_LidandoDiretamenteFileStream.cs" />
+    <Compile Include="AulasIO\2_UsandoStreamReader.cs" />
+    <Compile Include="AulasIO\3_CriandoArquivo.cs" />
+    <Compile Include="AulasIO\4_UsandoStreamEntradaConsole.cs" />
     <Compile Include="Entidades\Animal.cs" />
     <Compile Include="Entidades\Endereco.cs" />
     <Compile Include="Entidades\Proprietario.cs" />

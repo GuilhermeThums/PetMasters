@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Globalization;
 using PetMasters.Entidades;
 
 namespace PetMasters
@@ -33,11 +34,7 @@ namespace PetMasters
             var raca = campos[2];
             var cor = campos[3];
             var dataNascimentoString = campos[4];
-            var diaDataNascimento = int.Parse(dataNascimentoString.Substring(0, 2));
-            var mesDataNascimento = int.Parse(dataNascimentoString.Substring(3, 2));
-            var anoDataNascimento = int.Parse(dataNascimentoString.Substring(6, 4));
-
-            var dataNascimento = new DateTime(anoDataNascimento, mesDataNascimento, diaDataNascimento);
+            var dataNascimento = DateTime.Parse(dataNascimentoString, new CultureInfo("pt-BR"));
 
             return new Animal(nome, especie, raca, cor, dataNascimento);
         }
