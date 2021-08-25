@@ -1,5 +1,7 @@
 ﻿using PetMasters.Entidades;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace PetMasters
 {
@@ -7,14 +9,22 @@ namespace PetMasters
     {
         static void Main(string[] args)
         {
-            GravarUsandoEntity();
+            //GravarAnimais();
+            RecuperarAnimais();
             Console.ReadLine();
         }
 
 
-        private static void GravarUsandoEntity()
+        private static void GravarAnimais()
         {
-            var animal = new Animal("Totó", "Cachorro", "Poodle", "Preto", DateTime.Now);
+            var animal = new Animal()
+            {
+                Nome = "Totó",
+                Especie = "Cachorro",
+                Raca = "Poodle",
+                Cor = "Preto",
+                DataNascimento = DateTime.Now
+            };
 
             using (var contexto = new PetShopContext())
             {
@@ -23,5 +33,19 @@ namespace PetMasters
             }
 
         }
+
+        private static void RecuperarAnimais()
+        {
+            using (var contexto = new PetShopContext())
+            {
+                List<Animal> animais = contexto.Animal.ToList();
+
+                foreach (Animal animal in animais)
+                {
+                    Console.WriteLine(animal.ToString());
+                }
+            }
+        }
+
     }
 }
