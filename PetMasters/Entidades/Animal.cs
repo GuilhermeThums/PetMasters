@@ -36,28 +36,9 @@ namespace PetMasters.Entidades
 
         //public bool PossuiMicrochip => !string.IsNullOrEmpty(Microchip);
 
-        public Animal(int numeroRegistro, string nome, string especie, string raca, string cor, DateTime dataNascimento)
-        {
-            NumeroRegistro = numeroRegistro;
-            Nome = nome;
-            Especie = especie;
-            Raca = raca;
-            Cor = cor;
-            DataNascimento = dataNascimento;
-        }
-        
-        public Animal(string nome, string especie, string raca, string cor, DateTime dataNascimento)
-        {
-            Nome = nome;
-            Especie = especie;
-            Raca = raca;
-            Cor = cor;
-            DataNascimento = dataNascimento;
-        }
-
         public override string ToString()
         {
-            return $"Animal de nome: {Nome}, espécie: {Especie}, raça: {Raca}, pelo da cor: {Cor}, nascido na data de {DataNascimento.ToLongDateString()}";
+            return $"Animal de registro: {NumeroRegistro}, nome: {Nome}, espécie: {Especie}, raça: {Raca}, pelo da cor: {Cor}, nascido na data de {DataNascimento.ToLongDateString()}";
         }
     }
 }

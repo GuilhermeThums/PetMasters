@@ -37,7 +37,15 @@ namespace PetMasters
             var dataNascimentoString = campos[5];
             var dataNascimento = DateTime.Parse(dataNascimentoString, new CultureInfo("pt-BR"));
 
-            return new Animal(id, nome, especie, raca, cor, dataNascimento);
+            return new Animal()
+            {
+                NumeroRegistro = id,
+                Nome = nome,
+                Especie = especie,
+                Raca = raca,
+                Cor = cor,
+                DataNascimento = dataNascimento
+            };
         }
     }
 }
