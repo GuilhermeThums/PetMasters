@@ -1,14 +1,11 @@
-﻿using PetMasters.Entidades;
-using System;
-using System.Collections.Generic;
+﻿using System;
+using PetMasters.Entidades;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace PetMasters.AulasEntity
 {
-    public class AnimalDAO : IDisposable
+    public class AnimalDAO : IDisposable, IAnimalDAO
     {
         private readonly SqlConnection conexao;
 
@@ -114,7 +111,7 @@ namespace PetMasters.AulasEntity
             }
         }
 
-        public List<Animal> BusqueAnimais()
+        public List<Animal> ObtenhaAnimais()
         {
             var animais = new List<Animal>();
 
@@ -144,17 +141,6 @@ namespace PetMasters.AulasEntity
 
             return animais;
         }
-
-
-
-
-
-
-
-
-
-
-
 
     }
 }
