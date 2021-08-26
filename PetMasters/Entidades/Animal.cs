@@ -1,10 +1,14 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using PetMasters.Enumeradores;
 
 namespace PetMasters.Entidades
 {
     public class Animal
     {
+        [Key]
+        public int NumeroRegistro { get; set; }
+
         public string Nome { get; set; }
 
         public string Especie { get; set; }
@@ -30,15 +34,6 @@ namespace PetMasters.Entidades
         public string Microchip { get; set; }
 
         public bool PossuiMicrochip => !string.IsNullOrEmpty(Microchip);
-
-        public Animal(string nome, string especie, string raca, string cor, DateTime dataNascimento)
-        {
-            Nome = nome;
-            Especie = especie;
-            Raca = raca;
-            Cor = cor;
-            DataNascimento = dataNascimento;
-        }
 
         public override string ToString()
         {

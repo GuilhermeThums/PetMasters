@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AulasEntity\AnimalDAO.cs" />
     <Compile Include="AulasIO\1_LidandoDiretamenteFileStream.cs" />
     <Compile Include="AulasIO\2_UsandoStreamReader.cs" />
     <Compile Include="AulasIO\3_CriandoArquivo.cs" />
