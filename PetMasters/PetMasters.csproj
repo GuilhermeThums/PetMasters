@@ -156,7 +156,7 @@
     <Compile Include="Enumeradores\EnumeradorPelo.cs" />
     <Compile Include="Enumeradores\EnumeradorSituacaoCastracao.cs" />
     <Compile Include="Enumeradores\EnumeradorTipoTelefone.cs" />
-    <Compile Include="PetShopContext.cs" />
+    <Compile Include="AulasEntity\PetShopContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

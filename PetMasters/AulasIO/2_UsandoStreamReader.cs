@@ -3,7 +3,7 @@ using System.IO;
 using System.Globalization;
 using PetMasters.Entidades;
 
-namespace PetMasters
+namespace PetMasters.AulasIO
 {
     partial class Program
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PetMasters
+namespace PetMasters.AulasIO
 {
     partial class Program
     {

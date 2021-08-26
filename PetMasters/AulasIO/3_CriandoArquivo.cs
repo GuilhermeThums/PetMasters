@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 
-namespace PetMasters
+namespace PetMasters.AulasIO
 {
     partial class Program
     {

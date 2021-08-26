@@ -2,7 +2,7 @@
 using PetMasters.Entidades;
 using System;
 
-namespace PetMasters
+namespace PetMasters.AulasEntity
 {
     public class PetShopContext : DbContext
     {

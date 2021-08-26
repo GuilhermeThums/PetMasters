@@ -1,4 +1,5 @@
-﻿using PetMasters.Entidades;
+﻿using PetMasters.AulasEntity;
+using PetMasters.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
