@@ -11,8 +11,9 @@ namespace PetMasters
         {
             //GravarAnimais();
             //RecuperarAnimais();
-
-            RemovaTodosAnimais();
+            //RemovaTodosAnimais();
+            //AtualizarProduto();
+            //RecuperarAnimais();
             Console.ReadLine();
         }
 
@@ -71,6 +72,19 @@ namespace PetMasters
 
                 contexto.SaveChanges();
             }
+        }
+
+        private static void AtualizarProduto()
+        {
+            using (var contexto = new PetShopContext())
+            {
+                var primeiroAnimal = contexto.Animal.First();
+                primeiroAnimal.Nome = "Totó - alterado";
+                contexto.Animal.Update(primeiroAnimal);
+
+                contexto.SaveChanges();
+            }
+
         }
 
     }
