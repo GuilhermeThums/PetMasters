@@ -1,4 +1,5 @@
-﻿using PetMasters.AulasEntity;
+﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
+using PetMasters.AulasEntity;
 using PetMasters.Entidades;
 using System;
 using System.Collections.Generic;
@@ -10,83 +11,16 @@ namespace PetMasters
     {
         static void Main(string[] args)
         {
-            //GravarAnimais();
-            //RecuperarAnimais();
-            //RemovaTodosAnimais();
-            //AtualizarProduto();
-            //RecuperarAnimais();
+
             Console.ReadLine();
         }
 
-
-        private static void GravarAnimais()
+        static void ExibaEntries(IEnumerable<EntityEntry> entradas)
         {
-            var animal = new Animal()
+            foreach (EntityEntry entrada in entradas)
             {
-                Nome = "Totó",
-                Especie = "Cachorro",
-                Raca = "Poodle",
-                Cor = "Preto",
-                DataNascimento = DateTime.Now
-            };
-
-            using (var contexto = new PetShopContext())
-            {
-                contexto.Animal.Add(animal);
-                contexto.SaveChanges();
-            }
-
-        }
-
-        private static void RecuperarAnimais()
-        {
-            using (var contexto = new PetShopContext())
-            {
-                List<Animal> animais = contexto.Animal.ToList();
-
-                Console.WriteLine($"Foram encontrados {animais.Count} animais salvos.");
-
-                foreach (Animal animal in animais)
-                {
-                    Console.WriteLine(animal.ToString());
-                }
+                Console.WriteLine($"Estado: {entrada.State} - Entidade: {entrada.Entity}");
             }
         }
-
-        private static void RemovaAnimal(int numeroRegistro)
-        {
-            using (var contexto = new PetShopContext())
-            {
-                var animais = contexto.Animal.ToList();
-                contexto.Animal.Remove(new Animal { NumeroRegistro = numeroRegistro });
-                
-                contexto.SaveChanges();
-            }
-        }
-
-        private static void RemovaTodosAnimais()
-        {
-            using (var contexto = new PetShopContext())
-            {
-                var animais = contexto.Animal.ToList();
-                contexto.Animal.RemoveRange(animais);
-
-                contexto.SaveChanges();
-            }
-        }
-
-        private static void AtualizarProduto()
-        {
-            using (var contexto = new PetShopContext())
-            {
-                var primeiroAnimal = contexto.Animal.First();
-                primeiroAnimal.Nome = "Totó - alterado";
-                contexto.Animal.Update(primeiroAnimal);
-
-                contexto.SaveChanges();
-            }
-
-        }
-
     }
 }
