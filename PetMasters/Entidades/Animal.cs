@@ -22,7 +22,7 @@ namespace PetMasters.Entidades
         [Required]
         public DateTime DataNascimento { get; set; }
 
-        //public double Peso { get; set; }
+        public double Peso { get; set; }
 
         [Required]
         public Proprietario Proprietario { get; set; }
