@@ -14,7 +14,5 @@ namespace PetMasters.Entidades
         public int Numero { get; set; }
 
         public string Complemento { get; set; }
-
-        public int MyProperty { get; set; }
     }
 }
