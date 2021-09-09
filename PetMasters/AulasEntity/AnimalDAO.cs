@@ -65,7 +65,7 @@ namespace PetMasters.AulasEntity
                                                                 Raca = @raca, 
                                                                 Cor = @cor, 
                                                                 DataNascimento = @dataNascimento 
-                                                                WHERE NumeroRegistro = @numeroRegistro";
+                                                                WHERE Id = @id";
 
                 var paramNome = new SqlParameter("nome", animal.Nome);
                 comandoUpdate.Parameters.Add(paramNome);
@@ -82,8 +82,8 @@ namespace PetMasters.AulasEntity
                 var paramDataNascimento = new SqlParameter("dataNascimento", animal.DataNascimento);
                 comandoUpdate.Parameters.Add(paramDataNascimento);
 
-                var paramNumeroRegistro = new SqlParameter("numeroRegistro", animal.NumeroRegistro);
-                comandoUpdate.Parameters.Add(paramNumeroRegistro);
+                var paramId = new SqlParameter("id", animal.Id);
+                comandoUpdate.Parameters.Add(paramId);
 
                 comandoUpdate.ExecuteNonQuery();
             }
@@ -98,10 +98,10 @@ namespace PetMasters.AulasEntity
             try
             {
                 SqlCommand comandoDelete = conexao.CreateCommand();
-                comandoDelete.CommandText = "DELETE FROM Animal WHERE NumeroRegistro = @numeroRegistro";
+                comandoDelete.CommandText = "DELETE FROM Animal WHERE Id = @id";
 
-                var paramNumeroRegistro = new SqlParameter("numeroRegistro", animal.NumeroRegistro);
-                comandoDelete.Parameters.Add(paramNumeroRegistro);
+                var paramId = new SqlParameter("id", animal.Id);
+                comandoDelete.Parameters.Add(paramId);
 
                 comandoDelete.ExecuteNonQuery();
             }
@@ -117,7 +117,7 @@ namespace PetMasters.AulasEntity
 
             using (SqlCommand comandoSelect = conexao.CreateCommand())
             {
-                comandoSelect.CommandText = "SELECT NumeroRegistro, Nome, Especie, Raca, Cor, DataNascimento FROM Animal";
+                comandoSelect.CommandText = "SELECT Id, Nome, Especie, Raca, Cor, DataNascimento FROM Animal";
 
                 SqlDataReader resultSet = comandoSelect.ExecuteReader();
 
@@ -127,7 +127,7 @@ namespace PetMasters.AulasEntity
                     {
                         var animal = new Animal()
                         {
-                            NumeroRegistro = Convert.ToInt32(resultSet["NumeroRegistro"]),
+                            Id = Convert.ToInt32(resultSet["Id"]),
                             Nome = Convert.ToString(resultSet["Nome"]),
                             Especie = Convert.ToString(resultSet["Especie"]),
                             Raca = Convert.ToString(resultSet["Raca"]),

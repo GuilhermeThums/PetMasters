@@ -1,26 +1,31 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using PetMasters.Enumeradores;
 
 namespace PetMasters.Entidades
 {
     public class Animal
     {
-        [Key]
-        public int NumeroRegistro { get; set; }
+        public int Id { get; set; }
 
+        [Required]
         public string Nome { get; set; }
 
+        [Required]
         public string Especie { get; set; }
 
+        [Required]
         public string Raca { get; set; }
 
+        [Required]
         public string Cor { get; set; }
 
+        [Required]
         public DateTime DataNascimento { get; set; }
 
-        //public Proprietario Proprietario { get; set; }
+        //public double Peso { get; set; }
+
+        [Required]
+        public Proprietario Proprietario { get; set; }
 
         //public EnumeradorPelo Pelo { get; set; }
 
@@ -28,24 +33,20 @@ namespace PetMasters.Entidades
 
         //public EnumeradorSituacaoCastracao SituacaoCastracao { get; set; }
 
-        //public double Peso { get; set; }
-
         //public string Restricoes { get; set; }
 
         //public string Microchip { get; set; }
 
         //public bool PossuiMicrochip => !string.IsNullOrEmpty(Microchip);
 
-            Nome = nome;
-            Especie = especie;
-            Raca = raca;
-            Cor = cor;
-            DataNascimento = dataNascimento;
-        }
+        //public override string ToString()
+        //{
+        //    return $"Animal de registro: {Id}, nome: {Nome}, espécie: {Especie}, raça: {Raca}, pelo da cor: {Cor}, nascido na data de {DataNascimento.ToLongDateString()}";
+        //}
 
         public override string ToString()
         {
-            return $"Animal de registro: {NumeroRegistro}, nome: {Nome}, espécie: {Especie}, raça: {Raca}, pelo da cor: {Cor}, nascido na data de {DataNascimento.ToLongDateString()}";
+            return $"Animal de registro: {Id}, nome: {Nome}, espécie: {Especie}, raça: {Raca}, pelo da cor: {Cor}";
         }
     }
 }
