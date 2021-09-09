@@ -8,6 +8,8 @@ namespace PetMasters.AulasEntity
     {
         public DbSet<Animal> Animal { get; set; }
 
+        public DbSet<Proprietario> Proprietario { get; set; }
+
         private string StringConexao => "Server=(localdb)\\mssqllocaldb;Database=PetMastersDB;Trusted_Connection=true;";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

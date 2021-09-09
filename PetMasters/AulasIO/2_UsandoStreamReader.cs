@@ -39,7 +39,7 @@ namespace PetMasters.AulasIO
 
             return new Animal()
             {
-                NumeroRegistro = id,
+                Id = id,
                 Nome = nome,
                 Especie = especie,
                 Raca = raca,

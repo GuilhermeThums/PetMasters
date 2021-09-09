@@ -187,13 +187,9 @@
     <Compile Include="Enumeradores\EnumeradorSituacaoCastracao.cs" />
     <Compile Include="Enumeradores\EnumeradorTipoTelefone.cs" />
     <Compile Include="AulasEntity\PetShopContext.cs" />
-    <Compile Include="Migrations\20210827020112_Inicial.cs" />
-    <Compile Include="Migrations\20210827020112_Inicial.designer.cs">
-      <DependentUpon>20210827020112_Inicial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20210827020234_Peso.cs" />
-    <Compile Include="Migrations\20210827020234_Peso.designer.cs">
-      <DependentUpon>20210827020234_Peso.cs</DependentUpon>
+    <Compile Include="Migrations\20210909191621_Inicial.cs" />
+    <Compile Include="Migrations\20210909191621_Inicial.designer.cs">
+      <DependentUpon>20210909191621_Inicial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\PetShopContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />
