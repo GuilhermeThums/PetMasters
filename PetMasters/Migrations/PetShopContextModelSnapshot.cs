@@ -32,7 +32,7 @@ namespace PetMasters.Migrations
                     b.Property<string>("Nome")
                         .IsRequired();
 
-                    b.Property<double>("Peso");
+                    b.Property<double?>("Peso");
 
                     b.Property<int>("ProprietarioId");
 

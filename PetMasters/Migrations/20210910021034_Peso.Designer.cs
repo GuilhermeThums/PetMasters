@@ -8,7 +8,7 @@ using PetMasters.AulasEntity;
 namespace PetMasters.Migrations
 {
     [DbContext(typeof(PetShopContext))]
-    [Migration("20210909193050_Peso")]
+    [Migration("20210910021034_Peso")]
     partial class Peso
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,7 +33,7 @@ namespace PetMasters.Migrations
                     b.Property<string>("Nome")
                         .IsRequired();
 
-                    b.Property<double>("Peso");
+                    b.Property<double?>("Peso");
 
                     b.Property<int>("ProprietarioId");
 

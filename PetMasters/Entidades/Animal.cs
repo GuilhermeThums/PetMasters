@@ -22,7 +22,7 @@ namespace PetMasters.Entidades
         [Required]
         public DateTime DataNascimento { get; set; }
 
-        public double Peso { get; set; }
+        public double? Peso { get; set; }
 
         [Required]
         public Proprietario Proprietario { get; set; }
@@ -46,7 +46,7 @@ namespace PetMasters.Entidades
 
         public override string ToString()
         {
-            return $"Animal de registro: {Id}, nome: {Nome}, espécie: {Especie}, raça: {Raca}, pelo da cor: {Cor}";
+            return $"Animal de registro: {Id}, nome: {Nome}, espécie: {Especie}, raça: {Raca}, pelo da cor: {Cor}.\nProprietário: {Proprietario?.Nome}";
         }
     }
 }

@@ -11,8 +11,7 @@ namespace PetMasters.Migrations
             migrationBuilder.AddColumn<double>(
                 name: "Peso",
                 table: "Animal",
-                nullable: false,
-                defaultValue: 0.0);
+                nullable: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

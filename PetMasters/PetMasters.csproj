@@ -191,9 +191,9 @@
     <Compile Include="Migrations\20210909191621_Inicial.designer.cs">
       <DependentUpon>20210909191621_Inicial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20210909193050_Peso.cs" />
-    <Compile Include="Migrations\20210909193050_Peso.designer.cs">
-      <DependentUpon>20210909193050_Peso.cs</DependentUpon>
+    <Compile Include="Migrations\20210910021034_Peso.cs" />
+    <Compile Include="Migrations\20210910021034_Peso.designer.cs">
+      <DependentUpon>20210910021034_Peso.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\PetShopContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />
